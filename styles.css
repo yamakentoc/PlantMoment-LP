@@ -45,7 +45,7 @@ section { padding: clamp(72px, 9vw, 120px) 24px; }
 
 /* hero */
 .hero { max-width: var(--wrap); margin: 0 auto; min-height: 100svh; padding-top: 120px; padding-bottom: 80px; display: grid; grid-template-columns: 1fr minmax(0, 440px); gap: clamp(40px, 7vw, 110px); align-items: center; }
-.hero h1 { font-size: clamp(36px, 4.4vw, 58px); }
+.hero h1 { font-size: clamp(30px, 3.6vw, 50px); }
 .hero .lead { color: var(--muted); max-width: 30em; margin: 28px 0 40px; font-size: 17px; }
 .hero-media { margin: 0; width: 100%; max-width: 380px; justify-self: center; }
 /* オンボーディングのPlant Storyページ（402×874pt）を画面内に再現する */
@@ -128,7 +128,6 @@ section { padding: clamp(72px, 9vw, 120px) 24px; }
 .plain strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
 
 /* more */
-.hero-note { margin: 20px 0 0; font-size: 14px; color: var(--muted); }
 .hero-actions { display: flex; align-items: center; gap: 28px; }
 .hero-qr { display: flex; align-items: center; gap: 14px; }
 .hero-qr svg { width: 76px; height: 76px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); }
