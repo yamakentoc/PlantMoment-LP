@@ -126,10 +126,11 @@ section { padding: clamp(72px, 9vw, 120px) 24px; }
 .plain strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
 
 /* more */
-.hero-actions { display: flex; align-items: center; gap: 28px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; }
+.hero-actions .store-btn { flex-shrink: 0; }
 .hero-qr { display: flex; align-items: center; gap: 14px; }
-.hero-qr svg { width: 76px; height: 76px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); }
-.hero-qr p { margin: 0; font-size: 12px; line-height: 1.6; color: var(--muted); max-width: 12em; }
+.hero-qr svg { flex-shrink: 0; width: 76px; height: 76px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); }
+.hero-qr p { margin: 0; font-size: 12px; line-height: 1.6; color: var(--muted); max-width: 11em; }
 
 .more { background: var(--paper); }
 .more h2 { max-width: var(--wrap); margin: 0 auto 40px; }
