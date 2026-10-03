@@ -48,6 +48,7 @@ xcrun simctl io booted recordVideo --codec=h264 --force raw.mp4   # 操作後に
 
 - `howto.mp4`: 植物タブから、Momentタブ →「写真を撮る」→ モンステラ → シャッター → テンプレートを切り替えて「完了」まで、続けて操作して収録します。カメラには `PlantMoment/Assets.xcassets/OnboardingWelcomeMonstera.imageset/plant.jpg` を流しています。収録した動画は可変フレームレートなので、一度 `fps=30` で書き出してから、撮影直後の読み込みと「完了」後の処理待ちを除いた3区間を `trim` と `concat` でつないでいます（`-crf 26 -movflags +faststart`）。
 - `moment-t*.webp`: 6テンプレートとも同じ写真を使います。写真はpen.devの`Generate("ai")`で生成したコンクリート壁・床とモンステラの画像（928×1152、リポジトリには含めない）です。これをカメラに流し、モンステラを選んで撮影し、編集画面でテンプレートを選んで `xcrun simctl screenshot` で撮ります。iPhone 17（1206×2622）では、プレビューの角丸が入らないよう `crop=1022:1278:92:345` で内側を切り抜きます。角丸はCSS（`border-radius: 8.2% / 6.6%`）で付けます。
+- 英語版（`en/index.html`）は`../styles.css`と`../main.js`を共有し、素材は`assets/en/`に置きます。日本語版と同じ手順で、`landingPage`シナリオのアプリを`-AppleLanguages "(en)" -AppleLocale en_US`で起動して撮影しています（`howto.mp4`は0.9〜10.03秒・10.23〜18.53秒・18.73〜20.4秒をつないだもの）。フォントのサブセットは`index.html`と`en/index.html`を連結したテキストから作ります。
 - `shot-care.webp` はお手入れタブ、`shot-detail.webp` はモンステラの植物画面、`shot-story.webp` はMomentタブのPlant Story、`shot-plants.webp` は植物タブ、`shot-register.webp` は植物タブの「＋」から開く登録画面です。
 
 ### フォント
@@ -58,7 +59,7 @@ xcrun simctl io booted recordVideo --codec=h264 --force raw.mp4   # 操作後に
 pip3 install fonttools brotli
 for w in Regular Bold; do
   python3 -m fontTools.subset <seed>/LINESeedJP/fonts/ttf/LINESeedJP-$w.ttf \
-    --text-file=index.html --unicodes=U+0020-007E,U+2014,U+00A9,U+3000-303F \
+    --text-file=<(cat index.html en/index.html) --unicodes=U+0020-007E,U+2014,U+2018-201D,U+00A9,U+3000-303F \
     --flavor=woff2 --layout-features='*' --output-file=assets/fonts/LINESeedJP-$w-subset.woff2
 done
 ```
