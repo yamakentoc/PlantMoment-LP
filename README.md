@@ -47,7 +47,7 @@ xcrun simctl io booted recordVideo --codec=h264 --force raw.mp4   # 操作後に
 ```
 
 - `howto.mp4`: 植物タブから、Momentタブ →「写真を撮る」→ モンステラ → シャッター → テンプレートを切り替えて「完了」まで、続けて操作して収録します。カメラには `PlantMoment/Assets.xcassets/OnboardingWelcomeMonstera.imageset/plant.jpg` を流しています。収録した動画は可変フレームレートなので、一度 `fps=30` で書き出してから、撮影直後の読み込みと「完了」後の処理待ちを除いた3区間を `trim` と `concat` でつないでいます（`-crf 26 -movflags +faststart`）。
-- `moment-t*.webp`: 編集画面で各テンプレートを選び、`xcrun simctl screenshot` で撮影します。iPhone 17（1206×2622）では `crop=1026:1282:90:345` でプレビュー部分を切り抜けます。
+- `moment-t*.webp`: テンプレートごとに別の植物を撮影します（1: モンステラ、2: ゴムの木、3: ガジュマル、4: パキラ、5: サンスベリア、6: ポトス）。カメラには各植物の `Assets.xcassets/<植物>.imageset/plant.jpg` を流し、編集画面でテンプレートを選んで `xcrun simctl screenshot` で撮影します。iPhone 17（1206×2622）では、プレビューの角丸が入らないよう `crop=1022:1278:92:345` で内側を切り抜きます。角丸はCSS（`border-radius: 8.2% / 6.6%`）で付けます。
 - `shot-care.webp` はお手入れタブ、`shot-detail.webp` はモンステラの植物画面、`shot-story.webp` はMomentタブのPlant Story、`shot-plants.webp` は植物タブ、`shot-register.webp` は植物タブの「＋」から開く登録画面です。
 
 ### フォント
