@@ -110,9 +110,6 @@ section { padding: clamp(72px, 9vw, 120px) 24px; }
 .story-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr minmax(0, 330px); gap: clamp(40px, 7vw, 96px); align-items: center; }
 .story-text > p:not(.eyebrow) { color: #b9b7af; margin-top: 24px; }
 .story .screen { filter: none; }
-.facts { display: flex; gap: 48px; margin: 40px 0 0; }
-.facts dt { font-size: 13px; color: #8f8d86; }
-.facts dd { margin: 4px 0 0; font-size: 34px; font-weight: 700; line-height: 1.1; }
 .days { list-style: none; padding: 0; margin: clamp(80px, 10vw, 120px) auto 0; max-width: var(--wrap); display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 .days li { position: relative; }
 .days img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; }
