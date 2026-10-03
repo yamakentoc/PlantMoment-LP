@@ -26,7 +26,7 @@ python3 -m http.server 8080   # http://localhost:8080
 | `assets/day-{001,010,030,050,100}.webp` | `design/images/day-*.jpg` | WebP、幅1120px（`cwebp -q 80 -resize 1120 0`） |
 | `assets/howto.mp4` | シミュレータで収録（下記） | H.264、幅720px、30fps、音声なし |
 | `assets/moment-t{1..6}.webp` | シミュレータのスクリーンショット（下記） | Photo Momentのプレビュー部分を切り抜き、WebP、幅720px |
-| `assets/iphone17pro-frame.webp` | `PlantMoment/design/images/store-iphone17pro-plants-en-bezel-fixed.png`（pen.devのストア画像と同じApple公式のiPhone 17 Proフレーム） | 画面部分（1206×2622、角丸225）を透明に切り抜き、WebP・幅675px（`cwebp -q 90 -alpha_q 100 -exact -resize 675 0`） |
+| `assets/iphone17pro-frame.webp` | `PlantMoment/design/images/store-iphone17pro-*.png`（pen.devのストア画像に使われているAppleのiPhone 17 Proフレーム、1350×2760） | 画面部分（1206×2622、角丸225）を透明にし、Dynamic Islandの範囲はストア画像4枚で色が一致する画素だけを残して黒に揃えたもの。WebP・幅900px（`cwebp -q 92 -alpha_q 100 -exact -resize 900 0`） |
 | `assets/story-thumb-{001,010,030,050,100}.webp` | `PlantMoment/Assets.xcassets/OnboardingStoryVideoDay*.imageset/thumbnail.jpg` | WebP、幅180px（`cwebp -q 80 -resize 180 0`） |
 | `assets/shot-{care,detail,story,plants,register}.webp` | シミュレータのスクリーンショット（下記） | WebP、幅600px（`cwebp -q 82 -resize 600 0`） |
 | `assets/*-poster.jpg` | 各mp4の先頭フレーム | JPEG（`ffmpeg -frames:v 1`） |
