@@ -46,9 +46,19 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .hero { max-width: var(--wrap); margin: 0 auto; min-height: 100svh; padding-top: 120px; padding-bottom: 80px; display: grid; grid-template-columns: 1fr minmax(0, 440px); gap: clamp(40px, 7vw, 110px); align-items: center; }
 .hero h1 { font-size: clamp(40px, 5.6vw, 68px); }
 .hero .lead { color: var(--muted); max-width: 30em; margin: 28px 0 40px; font-size: 17px; }
-.hero-media { margin: 0; }
+.hero-media { margin: 0; width: 100%; max-width: 380px; justify-self: center; }
+/* オンボーディングのPlant Storyページ（402×874pt）を画面内に再現する */
+.phone-ui { container-type: inline-size; overflow: hidden; color: #fff; background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)), linear-gradient(rgba(0, 0, 0, .62), rgba(0, 0, 0, .62)), url("assets/onboarding-backdrop.jpg") center / cover; }
+.phone-ui > * { --pt: calc(100cqw / 402); }
+.phone-status { position: absolute; top: 0; left: 0; right: 0; height: calc(62 * var(--pt)); display: flex; align-items: center; justify-content: space-between; padding: calc(4 * var(--pt)) calc(34 * var(--pt)) 0 calc(48 * var(--pt)); font-size: calc(17 * var(--pt)); font-weight: 700; }
+.phone-status svg { width: calc(64 * var(--pt)); height: auto; }
+.phone-hero { position: absolute; top: calc(102 * var(--pt)); left: calc(46 * var(--pt)); width: calc(310 * var(--pt)); }
+.phone-copy { position: absolute; top: calc(603 * var(--pt)); left: 0; right: 0; padding: 0 calc(28 * var(--pt)); text-align: center; }
+.phone-title { margin: 0; font-size: calc(26 * var(--pt)); font-weight: 700; line-height: 1.25; }
+.phone-sub { margin: calc(9 * var(--pt)) 0 0; font-size: calc(14 * var(--pt)); line-height: 1.4; color: rgba(255, 255, 255, .72); }
+.phone-next { position: absolute; left: calc(26 * var(--pt)); right: calc(26 * var(--pt)); bottom: calc(54 * var(--pt)); height: calc(56 * var(--pt)); border-radius: 999px; background: #f7f7f7; color: #141414; display: flex; align-items: center; justify-content: center; font-size: calc(15 * var(--pt)); font-weight: 700; }
 /* オンボーディングのPlant Story（幅310pt・4:5）と同じ比率で、文字の大きさと位置を幅に合わせて拡大する */
-.film { position: relative; aspect-ratio: 4 / 5; border-radius: calc(24 / 310 * 100%) / calc(24 / 387.5 * 100%); overflow: hidden; background: #000; color: #fff; container-type: inline-size; box-shadow: 0 30px 60px -30px rgba(30, 32, 25, .45); }
+.film { position: relative; aspect-ratio: 4 / 5; border-radius: calc(24 / 310 * 100%) / calc(24 / 387.5 * 100%); overflow: hidden; background: #000; color: #fff; container-type: inline-size; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .film::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0, 0, 0, .72)); pointer-events: none; }
 .film-center, .film-meta { position: absolute; z-index: 1; }
@@ -58,16 +68,17 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .film-meta { left: calc(20 / 310 * 100cqw); bottom: calc(20 / 310 * 100cqw); display: flex; flex-direction: column; gap: calc(3 / 310 * 100cqw); font-size: calc(9 / 310 * 100cqw); line-height: 1.2; text-shadow: 0 1px 2px rgba(0, 0, 0, .45); }
 .film-name { font-style: italic; }
 .film-thumbs { list-style: none; margin: 0; padding: 0; margin-top: calc(18 / 310 * 100%); display: grid; grid-template-columns: repeat(5, 1fr); gap: calc(8 / 310 * 100%); container-type: inline-size; }
-.film-thumbs li { display: flex; flex-direction: column; align-items: center; gap: 4px; opacity: .7; color: var(--muted); transition: opacity .3s; }
-.film-thumbs li.is-active { opacity: 1; color: var(--ink); }
+.film-thumbs li { display: flex; flex-direction: column; align-items: center; gap: calc(4 / 310 * 100cqw); opacity: .7; color: rgba(255, 255, 255, .6); transition: opacity .3s; }
+.film-thumbs li.is-active { opacity: 1; color: #fff; }
 .thumb { position: relative; display: block; width: 100%; aspect-ratio: 3 / 4; border-radius: 6px; overflow: hidden; outline: 1.5px solid transparent; outline-offset: -1.5px; }
 .film-thumbs li.is-active .thumb { outline-color: #fff; }
 .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .thumb .bar { position: absolute; left: 5px; right: 5px; bottom: 5px; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, .3); overflow: hidden; visibility: hidden; }
 .film-thumbs li.is-active .bar { visibility: visible; }
 .thumb .bar i { display: block; height: 100%; width: 0; background: #fff; border-radius: 3px; }
-.film-thumbs .label { font-size: 12px; line-height: 1.2; }
+.film-thumbs .label { font-size: calc(9 / 310 * 100cqw); line-height: 1.2; }
 .film-thumbs li.is-active .label { font-weight: 700; }
+.thumb { border-radius: calc(6 / 310 * 100cqw); }
 
 /* plants */
 .care-grid.plants-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -75,7 +86,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 /* screens */
 /* iPhone 17 Proの公式フレーム（1350×2760、画面1206×2622）。pen.devのストア画像と同じ素材を重ねる */
 .screen { position: relative; aspect-ratio: 1350 / 2760; filter: drop-shadow(0 24px 30px rgba(30, 32, 25, .28)); }
-.screen img, .screen video { position: absolute; left: 5.3333%; top: 2.5%; width: 89.3333%; height: 95%; object-fit: cover; border-radius: 18.657% / 8.581%; background: #000; }
+.screen > img, .screen > video, .screen > .phone-ui { position: absolute; left: 5.3333%; top: 2.5%; width: 89.3333%; height: 95%; object-fit: cover; border-radius: 18.657% / 8.581%; background: #000; }
 .screen::after { content: ""; position: absolute; inset: 0; background: url("assets/iphone17pro-frame.webp") center / 100% 100% no-repeat; pointer-events: none; }
 
 /* howto */
@@ -146,7 +157,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
   .nav-links { display: none; }
   .nav-cta { margin-left: auto; }
   .hero { grid-template-columns: 1fr; padding-top: 96px; min-height: 0; gap: 48px; }
-  .hero-media { max-width: 440px; width: 100%; margin: 0 auto; }
+  .hero-media { max-width: 300px; margin: 0 auto; }
   .howto-body, .story-grid, .care-grid, .care-grid.plants-grid { grid-template-columns: 1fr; }
   .howto .screen, .story .screen { max-width: 300px; width: 100%; margin: 0 auto; }
   .story-grid .screen { order: 2; }
