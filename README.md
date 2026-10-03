@@ -20,17 +20,19 @@ python3 -m http.server 8080   # http://localhost:8080
 
 素材は [yamakentoc/PlantMoment](https://github.com/yamakentoc/PlantMoment) から変換してコピーしています（サブモジュールにはしていません）。以下のパスはPlantMomentリポジトリのルートからの相対パスです。
 
-| LPの素材 | 元ファイル | 変換方法 |
+変換後のサイズと形式を表にしています。コマンドの品質値は目安です。
+
+| LPの素材 | 元ファイル | 変換後 |
 |---|---|---|
-| `assets/day-{001,010,030,050,100}.webp` | `design/images/day-*.jpg` | `cwebp -q 80 -resize 1120 0` |
-| `assets/phone-{plants,plant-detail,plant-story,photo-moment-onboarding}.webp` | `design/images/store-iphone17pro-*.png` | `cwebp -q 85 -alpha_q 100 -resize 900 0` |
-| `assets/photo-moment.webp` | `design/images/onboarding-photo-moment.jpg` | `cwebp -q 85 -resize 900 0` |
-| `assets/plant-*.webp` | `design/images/onboarding-plant-grid/*.png` | `cwebp -q 80 -resize 700 0` |
-| `assets/app-icon.png` | `design/images/AppIconDisplay.png` | `sips -Z 256` |
-| `assets/plant-story.mp4` | `PlantMoment/Resources/OnboardingPlantStory.mp4` | `ffmpeg -an -vf scale=720:-2 -c:v libx264 -crf 26 -pix_fmt yuv420p -movflags +faststart` |
-| `assets/screen-{list,detail,photo}.mp4` | シミュレータで収録（下記） | `ffmpeg -ss 0.4 -an -vf "fps=30,scale=600:-2" -c:v libx264 -crf 27 -pix_fmt yuv420p -movflags +faststart` |
-| `assets/*-poster.jpg` | 各mp4の先頭付近のフレーム | `ffmpeg -ss 0.5 -frames:v 1 -q:v 5` |
-| `assets/fonts/*.woff2` | `PlantMoment/Resources/Fonts/` | `python3 -m fontTools.ttLib.woff2 compress`（ライセンスは同じフォルダの `*-OFL.txt`） |
+| `assets/day-{001,010,030,050,100}.webp` | `design/images/day-*.jpg` | WebP、幅1120px（例: `cwebp -q 80 -resize 1120 0`） |
+| `assets/phone-{plants,plant-detail,plant-story,photo-moment-onboarding}.webp` | `design/images/store-iphone17pro-*.png` | WebP、幅900px |
+| `assets/photo-moment.webp` | `design/images/onboarding-photo-moment.jpg` | WebP、幅900px |
+| `assets/plant-{monstera,pachira,gajumaru,sansevieria}.webp` | `design/images/onboarding-plant-grid/*.png` | WebP、700×700px |
+| `assets/app-icon.png` | `design/images/AppIconDisplay.png` | PNG、256×256px（`sips -Z 256`） |
+| `assets/plant-story.mp4` | `PlantMoment/Resources/OnboardingPlantStory.mp4` | H.264、幅720px、音声なし（`ffmpeg -an -vf scale=720:-2 -crf 26 -movflags +faststart`） |
+| `assets/screen-{list,detail,photo}.mp4` | シミュレータで収録（下記） | H.264、幅600px、音声なし（`ffmpeg -an -vf scale=600:-2 -c:v libx264 -crf 27 -pix_fmt yuv420p -movflags +faststart`） |
+| `assets/*-poster.jpg` | 各mp4のフレーム | JPEG（`ffmpeg -frames:v 1`） |
+| `assets/fonts/*.woff2` | `PlantMoment/Resources/Fonts/` | WOFF2。ライセンスは同じフォルダの `*-OFL.txt` |
 
 ### iPhone画面の動画
 
