@@ -3,241 +3,178 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Plant Moment — 植物との時間を、作品に。</title>
-<meta name="description" content="Plant Momentは、植物のお手入れを支えながら、2秒動画で日々の植物記録を残すiOSアプリです。">
-<meta property="og:title" content="Plant Moment — 植物との時間を、作品に。">
-<meta property="og:description" content="お手入れを記録して、2秒をつないで成長ストーリーに。">
-<meta property="og:image" content="assets/day-100.webp">
-<meta name="theme-color" content="#f6f3ec">
+<title>Plant Moment — 植物との時間を作品に。</title>
+<meta name="description" content="Plant Momentは、植物のお手入れを記録しながら、写真と2秒動画で毎日の姿を残すiPhoneアプリです。">
+<meta property="og:title" content="Plant Moment — 植物との時間を作品に。">
+<meta property="og:description" content="水やりのついでに一枚。DAYと植物名が入った写真と、2秒動画をつないだPlant Storyで、植物の毎日を残せます。">
+<meta property="og:image" content="assets/moment-t1.webp">
+<meta name="theme-color" content="#f4f1ea">
 <link rel="icon" href="assets/app-icon.png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<link rel="preload" href="assets/day-001.webp" as="image">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top"><img src="assets/app-icon.png" alt="" width="28" height="28"><span>Plant Moment</span></a>
-    <nav class="nav-links">
+    <a class="brand" href="#top"><img src="assets/app-icon.png" alt="" width="26" height="26"><span>Plant Moment</span></a>
+    <nav class="nav-links" aria-label="ページ内">
+      <a href="#howto">使い方</a>
+      <a href="#photo">Photo Moment</a>
       <a href="#story">Plant Story</a>
       <a href="#care">お手入れ</a>
-      <a href="#photo">Photo Moment</a>
-      <a href="#features">機能</a>
     </nav>
-    <a class="nav-cta" href="https://apps.apple.com/jp/app/id6813776052" target="_blank" rel="noopener">入手</a>
+    <a class="nav-cta" href="https://apps.apple.com/jp/app/id6813776052" target="_blank" rel="noopener">App Store</a>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero" data-scroll-section>
-    <div class="hero-sticky">
-      <p class="eyebrow reveal">iPhone向け 植物記録アプリ</p>
-      <h1 class="hero-title reveal" data-hero-title>
-        植物との時間を、<br><span class="accent">作品に。</span>
-      </h1>
-      <p class="hero-sub reveal">お手入れを、迷わず。<br class="sp">変化を、2秒で。</p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="https://apps.apple.com/jp/app/id6813776052" target="_blank" rel="noopener">App Storeでダウンロード</a>
-        <a class="btn btn-link" href="#story">詳しく見る <span aria-hidden="true">›</span></a>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">iPhoneの植物記録アプリ</p>
+      <h1>植物との時間を<br>作品に。</h1>
+      <p class="lead">水やりや葉水を記録しながら、その日の姿を写真と2秒の動画で残せます。撮りためた記録には、迎えてからの日数と植物の名前が入ります。</p>
+      <a class="store-btn" href="https://apps.apple.com/jp/app/id6813776052" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.4-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.76-.96 2.8 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+        <span>App Storeでダウンロード</span>
+      </a>
+    </div>
+    <figure class="hero-media">
+      <video class="hero-video" src="assets/plant-story.mp4" poster="assets/plant-story-poster.jpg" muted loop playsinline autoplay preload="auto" aria-label="モンステラのPlant Story。2秒ずつ撮った動画が順に再生されます。"></video>
+      <figcaption>
+        <span class="day">DAY 1 — DAY 100</span>
+        <span class="name">Monstera deliciosa</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="howto" id="howto">
+    <div class="section-head">
+      <h2>水やりのついでに一枚</h2>
+      <p>お手入れを済ませたら、そのまま植物の画面から撮影へ。シャッターを押してテンプレートを選べば、DAYと名前の入った一枚ができあがります。</p>
+    </div>
+    <div class="howto-body">
+      <div class="screen">
+        <video id="howto-video" src="assets/howto.mp4" poster="assets/howto-poster.jpg" muted playsinline preload="metadata" aria-label="お手入れの記録からPhoto Momentの完成までのアプリ操作"></video>
       </div>
-      <div class="hero-device" data-hero-device>
-        <img class="hero-plant hero-plant-l" src="assets/plant-pachira.webp" alt="" data-parallax="-0.18">
-        <div class="iphone hero-phone"><video src="assets/screen-list.mp4" poster="assets/screen-list-poster.jpg" muted loop playsinline preload="auto" autoplay></video></div>
-        <img class="hero-plant hero-plant-r" src="assets/plant-sansevieria.webp" alt="" data-parallax="-0.28">
-      </div>
+      <ol class="steps" id="steps">
+        <li data-from="0" data-to="6.8">
+          <button type="button">
+            <span class="n">1</span>
+            <span class="t">お手入れを記録する</span>
+            <span class="d">今日の予定から「完了」を押すだけ。予定日に縛られず、植物の様子を見て記録できます。</span>
+          </button>
+        </li>
+        <li data-from="6.8" data-to="14.4">
+          <button type="button">
+            <span class="n">2</span>
+            <span class="t">「残す」から撮影する</span>
+            <span class="d">カメラには撮影前からDAYと日付が表示されます。写真ライブラリの一枚も使えます。</span>
+          </button>
+        </li>
+        <li data-from="14.4" data-to="23">
+          <button type="button">
+            <span class="n">3</span>
+            <span class="t">テンプレートを選ぶ</span>
+            <span class="d">文字の配置を選んで完成。写真アプリへの保存や共有もここからできます。</span>
+          </button>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- STATEMENT -->
-  <section class="statement">
-    <p class="statement-text" data-word-reveal>毎日のお手入れが、いつの間にか、ひとつの物語になる。</p>
-  </section>
-
-  <!-- DAY SCRUB -->
-  <section class="days" id="story" data-days>
-    <div class="days-sticky">
-      <div class="days-frames">
-        <img src="assets/day-001.webp" alt="DAY 1 のモンステラ" class="is-active">
-        <img src="assets/day-010.webp" alt="DAY 10 のモンステラ" loading="lazy">
-        <img src="assets/day-030.webp" alt="DAY 30 のモンステラ" loading="lazy">
-        <img src="assets/day-050.webp" alt="DAY 50 のモンステラ" loading="lazy">
-        <img src="assets/day-100.webp" alt="DAY 100 のモンステラ" loading="lazy">
-      </div>
-      <div class="days-shade"></div>
-      <div class="days-copy">
-        <p class="days-label">DAY</p>
-        <p class="days-number" data-day-number>1</p>
-        <p class="days-plant"><em>Monstera deliciosa</em></p>
-      </div>
-      <div class="days-captions">
-        <p class="is-active">うちに来た日。</p>
-        <p>新しい葉が、ほどけた。</p>
-        <p>窓辺へ、ぐんと伸びる。</p>
-        <p>土の中にも、季節がある。</p>
-        <p>100日目の、いつもの景色。</p>
-      </div>
-      <div class="days-progress"><span data-days-bar></span></div>
+  <section class="photo" id="photo">
+    <div class="section-head">
+      <p class="eyebrow">Photo Moment</p>
+      <h2>同じ一枚の、6つの仕上がり</h2>
+      <p>DAY、植物の名前、撮影した日は必ず入ります。変えられるのは配置だけなので、どれを選んでも記録として読めます。</p>
     </div>
+    <ul class="templates">
+      <li><img src="assets/moment-t1.webp" alt="テンプレート1。左下にDAY、学名、日付" width="720" height="900" loading="lazy"></li>
+      <li><img src="assets/moment-t2.webp" alt="テンプレート2。上にDAYと日付、左下に学名" width="720" height="900" loading="lazy"></li>
+      <li><img src="assets/moment-t3.webp" alt="テンプレート3。左下に学名、右下にDAYと日付" width="720" height="900" loading="lazy"></li>
+      <li><img src="assets/moment-t4.webp" alt="テンプレート4。上に学名と日付、右下にDAY" width="720" height="900" loading="lazy"></li>
+      <li><img src="assets/moment-t5.webp" alt="テンプレート5。左上に学名と日付、左下にDAY" width="720" height="900" loading="lazy"></li>
+      <li><img src="assets/moment-t6.webp" alt="テンプレート6。下部中央にDAYと学名" width="720" height="900" loading="lazy"></li>
+    </ul>
   </section>
 
-  <!-- VIDEO / PLANT STORY -->
-  <section class="story dark">
-    <div class="container">
-      <p class="eyebrow reveal">Video Moment &amp; Plant Story</p>
-      <h2 class="display reveal">2秒をつないで、<br>成長ムービーに。</h2>
-      <p class="lead reveal">気づいた変化を、たった2秒で撮るだけ。<br>積み重ねたVideo Momentが、1本のPlant Storyになります。</p>
-      <div class="story-stage reveal-scale" data-story-stage>
-        <div class="device">
-          <div class="device-screen">
-            <video src="assets/plant-story.mp4" poster="assets/plant-story-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
-          </div>
-        </div>
-        <ul class="story-stats">
-          <li><strong data-count="2">0</strong><span>秒の動画</span></li>
-          <li><strong data-count="5">0</strong><span>つの瞬間</span></li>
-          <li><strong data-count="100">0</strong><span>日のストーリー</span></li>
+  <section class="story" id="story">
+    <div class="story-grid">
+      <div class="story-text">
+        <p class="eyebrow">Video Moment / Plant Story</p>
+        <h2>2秒ずつ撮って<br>あとで1本に</h2>
+        <p>カメラを向けるのは2秒だけ。撮影は自動で止まります。同じ植物の動画が2本以上たまったら、撮った順につないでPlant Storyにできます。</p>
+        <dl class="facts">
+          <div><dt>1回の撮影</dt><dd>2秒</dd></div>
+          <div><dt>Plant Storyの素材</dt><dd>2〜8本</dd></div>
+        </dl>
+      </div>
+      <div class="screen screen-dark">
+        <img src="assets/shot-story.webp" alt="Plant Storyの画面。モンステラのVideo Moment 5件、DAY 1からDAY 100" width="600" height="1305" loading="lazy">
+      </div>
+    </div>
+    <ol class="days" aria-label="モンステラの成長">
+      <li><img src="assets/day-001.webp" alt="" loading="lazy"><span>DAY 1</span></li>
+      <li><img src="assets/day-010.webp" alt="" loading="lazy"><span>DAY 10</span></li>
+      <li><img src="assets/day-030.webp" alt="" loading="lazy"><span>DAY 30</span></li>
+      <li><img src="assets/day-050.webp" alt="" loading="lazy"><span>DAY 50</span></li>
+      <li><img src="assets/day-100.webp" alt="" loading="lazy"><span>DAY 100</span></li>
+    </ol>
+  </section>
+
+  <section class="care" id="care">
+    <div class="care-grid">
+      <div class="care-shots">
+        <div class="screen"><img src="assets/shot-care.webp" alt="お手入れタブ。今日のお手入れが植物ごとに並ぶ" width="600" height="1305" loading="lazy"></div>
+        <div class="screen"><img src="assets/shot-detail.webp" alt="モンステラの詳細画面。水やり、葉水、肥料の前回と次回" width="600" height="1305" loading="lazy"></div>
+      </div>
+      <div class="care-text">
+        <p class="eyebrow">お手入れ</p>
+        <h2>予定は目安として</h2>
+        <p>水やりの日は、季節や置き場所で変わります。Plant Momentの予定は、植物の様子を確かめるきっかけです。</p>
+        <ul class="plain">
+          <li><strong>植物ごと、項目ごとの間隔</strong>水やり、葉水、肥料などをそれぞれ何日ごとに行うか決められます。</li>
+          <li><strong>見送りと延期</strong>土がまだ湿っていたら見送って次の予定へ。都合が悪い日は、今回だけ別の日に延期できます。</li>
+          <li><strong>前回と次回がひと目で</strong>植物の画面に、項目ごとの前回の記録と次の予定が並びます。</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CARE (sticky phone) -->
-  <section class="care" id="care" data-care>
-    <div class="container care-grid">
-      <div class="care-phone-wrap">
-        <div class="care-phone">
-          <div class="iphone is-active"><video src="assets/screen-list.mp4" poster="assets/screen-list-poster.jpg" muted loop playsinline preload="none"></video></div>
-          <div class="iphone "><video src="assets/screen-detail.mp4" poster="assets/screen-detail-poster.jpg" muted loop playsinline preload="none"></video></div>
-          <div class="iphone "><video src="assets/screen-photo.mp4" poster="assets/screen-photo-poster.jpg" muted loop playsinline preload="none"></video></div>
-          <img src="assets/phone-plant-story.webp" alt="Plant Story" loading="lazy" width="900" height="1840">
-        </div>
-      </div>
-      <div class="care-steps">
-        <article class="care-step is-active">
-          <div class="iphone care-step-img"><video src="assets/screen-list.mp4" poster="assets/screen-list-poster.jpg" muted loop playsinline preload="none"></video></div>
-          <p class="eyebrow">01 — Plants</p>
-          <h3>あなたの植物を、<br>ひとつの場所に。</h3>
-          <p>名前が分からなくても大丈夫。写真から植物名を推定して、そのまま登録。部屋ごとのタグで、増えても見失いません。</p>
-        </article>
-        <article class="care-step">
-          <div class="iphone care-step-img"><video src="assets/screen-detail.mp4" poster="assets/screen-detail-poster.jpg" muted loop playsinline preload="none"></video></div>
-          <p class="eyebrow">02 — Care</p>
-          <h3>お手入れは、<br>かんたん便利に。</h3>
-          <p>水やり、葉水、肥料、剪定。「数日ごと」から「2週間ごとの水曜・金曜」まで、植物に合わせた予定を。ホームから一括で記録できます。</p>
-        </article>
-        <article class="care-step">
-          <div class="iphone care-step-img"><video src="assets/screen-photo.mp4" poster="assets/screen-photo-poster.jpg" muted loop playsinline preload="none"></video></div>
-          <p class="eyebrow">03 — Photo</p>
-          <h3>いつもの一枚に、<br>DAYと名前を。</h3>
-          <p>テンプレートを選ぶだけで、迎えてからの日数と植物名が美しく重なります。文字の表示やフィルターも自由に。</p>
-        </article>
-        <article class="care-step">
-          <img class="care-step-img" src="assets/phone-plant-story.webp" alt="" loading="lazy" width="900" height="1840">
-          <p class="eyebrow">04 — Story</p>
-          <h3>記録が、<br>そのまま作品に。</h3>
-          <p>お手入れのついでに残した2秒が、DAY 1からDAY 100へ。完成したPlant Storyは写真アプリに保存して、好きな場所でシェア。</p>
-        </article>
-      </div>
-    </div>
+  <section class="more">
+    <h2>ほかにできること</h2>
+    <dl class="more-list">
+      <div><dt>名前が分からなくても登録</dt><dd>写真から植物名の候補を出せます（Pro）。あとから名前を変えることもできます。</dd></div>
+      <div><dt>タグで整理</dt><dd>「リビング」「窓辺」など、置き場所ごとに一覧を絞り込めます。</dd></div>
+      <div><dt>バックアップ</dt><dd>記録と写真・動画をまとめたバックアップを作っておけば、機種変更のときに戻せます。</dd></div>
+      <div><dt>料金</dt><dd>2株までは無料。Proは買い切り2,480円、または月額500円で、植物の数に上限がなくなります。広告はありません。</dd></div>
+    </dl>
   </section>
 
-  <!-- PHOTO MOMENT -->
-  <section class="photo" id="photo" data-photo>
-    <div class="photo-sticky">
-      <div class="photo-frame" data-photo-frame>
-        <img src="assets/photo-moment.webp" alt="Photo Momentで仕上げたモンステラの写真">
-        <div class="photo-overlay">
-          <p class="pm-day">DAY 100</p>
-          <p class="pm-name"><em>Monstera deliciosa</em></p>
-          <p class="pm-date">2026.08.09</p>
-        </div>
-      </div>
-      <div class="photo-copy" data-photo-copy>
-        <p class="eyebrow">Photo Moment</p>
-        <h2 class="display"><span class="nw">いつもの一枚を、</span><br>おしゃれに。</h2>
-        <p class="lead">DAY、植物名、日付を美しいタイポグラフィで重ねて。<br>テンプレートとフィルターで、記念の一枚に仕上げます。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES BENTO -->
-  <section class="features" id="features">
-    <div class="container">
-      <p class="eyebrow reveal">Features</p>
-      <h2 class="display reveal">続けられる、<br>ちょうどいい機能。</h2>
-      <div class="bento">
-        <article class="tile tile-wide tile-green reveal">
-          <div>
-            <h3>柔軟なお手入れ予定</h3>
-            <p>間隔・曜日・一回きり。Proなら月ごとに間隔を変えて、季節にも合わせられます。</p>
-          </div>
-          <div class="calendar" aria-hidden="true">
-            <span>月</span><span>火</span><span class="on">水</span><span>木</span><span class="on">金</span><span>土</span><span>日</span>
-          </div>
-        </article>
-        <article class="tile reveal">
-          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5l3 3 6-7M11 15.5l1 0M12 12.5l3 3 6-7"/></svg>
-          <h3>一括記録 <span class="pro">Pro</span></h3>
-          <p>植物が増えても、ホームからまとめて完了。</p>
-        </article>
-        <article class="tile reveal">
-          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4"/></svg>
-          <h3>連動記録</h3>
-          <p>水やりと一緒に、関連するお手入れも同時に記録。</p>
-        </article>
-        <article class="tile reveal">
-          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4"/></svg>
-          <h3>自由なお手入れ名 <span class="pro">Pro</span></h3>
-          <p>植物に合わせて、お手入れ項目をカスタマイズ。</p>
-        </article>
-        <article class="tile reveal">
-          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="8.5"/></svg>
-          <h3>見送り・延期</h3>
-          <p>予定は命令じゃない。植物の様子を見て、ずらせます。</p>
-        </article>
-        <article class="tile tile-image reveal">
-          <img src="assets/plant-monstera.webp" alt="" loading="lazy">
-          <div>
-            <h3>AIで植物名を推定 <span class="pro">Pro</span></h3>
-            <p>名前が分からない子も、写真から。</p>
-          </div>
-        </article>
-        <article class="tile tile-wide tile-dark reveal">
-          <div>
-            <h3>完全バックアップ</h3>
-            <p>植物の記録、Photo Moment、Video Momentの撮影マスターまで丸ごと書き出し。新しいiPhoneへ、そのまま引っ越し。</p>
-          </div>
-          <p class="tile-big" aria-hidden="true">100%</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section class="cta">
-    <div class="cta-bg" data-parallax-bg><img src="assets/day-100.webp" alt="" loading="lazy"></div>
-    <div class="cta-inner reveal">
-      <img class="cta-icon" src="assets/app-icon.png" alt="Plant Moment アプリアイコン" width="112" height="112">
-      <h2 class="display">今日から、<br class="sp">DAY 1。</h2>
-      <p class="lead">Plant Momentは無料でダウンロードできます。<br>Proは広告なし・買い切りにも対応。</p>
-      <a class="btn btn-primary btn-large" href="https://apps.apple.com/jp/app/id6813776052" target="_blank" rel="noopener">App Storeでダウンロード</a>
-    </div>
+    <img class="cta-icon" src="assets/app-icon.png" alt="" width="96" height="96" loading="lazy">
+    <h2>今日の一枚から</h2>
+    <p>iPhone向け・無料でダウンロードできます</p>
+    <a class="store-btn" href="https://apps.apple.com/jp/app/id6813776052" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.4-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.76-.96 2.8 1.02.08 2.05-.51 2.68-1.28z"/></svg>
+      <span>App Storeでダウンロード</span>
+    </a>
   </section>
+
 </main>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <p>© Plant Moment</p>
-    <nav>
+  <div class="footer-inner">
+    <span>© 2026 Plant Moment</span>
+    <nav aria-label="フッター">
       <a href="https://yamakentoc.github.io/PlantMoment-Legal/privacy/">プライバシーポリシー</a>
       <a href="https://yamakentoc.github.io/PlantMoment-Legal/support/">サポート</a>
     </nav>
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>
