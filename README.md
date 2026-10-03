@@ -29,7 +29,7 @@ python3 -m http.server 8080   # http://localhost:8080
 | `assets/shot-{care,detail,story}.webp` | シミュレータのスクリーンショット（下記） | WebP、幅600px（`cwebp -q 82 -resize 600 0`） |
 | `assets/*-poster.jpg` | 各mp4の先頭フレーム | JPEG（`ffmpeg -frames:v 1`） |
 | `assets/app-icon.png` | `design/images/AppIconDisplay.png` | PNG、256×256px（`sips -Z 256`） |
-| `assets/fonts/*.woff2` | `PlantMoment/Resources/Fonts/` | WOFF2。ライセンスは同じフォルダの `*-OFL.txt` |
+| `assets/fonts/LINESeedJP-*-subset.woff2` | [line/seed](https://github.com/line/seed) のリリース `LINESeedJP/fonts/ttf/` | WOFF2（サブセット、下記）。ライセンスは `assets/fonts/LINESeedJP-OFL.txt` |
 
 ### シミュレータでの撮影
 
@@ -47,13 +47,15 @@ xcrun simctl io booted recordVideo --codec=h264 --force raw.mp4   # 操作後に
 - `moment-t*.webp`: 編集画面で各テンプレートを選び、`xcrun simctl screenshot` で撮影します。iPhone 17（1206×2622）では `crop=1026:1282:90:345` でプレビュー部分を切り抜けます。
 - `shot-care.webp` はお手入れタブ、`shot-detail.webp` はモンステラの植物画面、`shot-story.webp` はMomentタブのPlant Storyです。
 
-### 見出しのフォント
+### フォント
 
-Noto Serif JPは容量が大きい（約6MB）ため、`index.html` で使う文字だけにサブセット化しています。**文言を変えたら作り直してください。**
+[LINE Seed JP](https://github.com/line/seed)（OFL）のRegularとBoldを、`index.html` で使う文字とASCIIだけにサブセット化しています。**文言を変えたら作り直してください。**
 
 ```sh
 pip3 install fonttools brotli
-python3 -m fontTools.subset <PlantMoment>/PlantMoment/Resources/Fonts/NotoSerifJP-SemiBold.otf \
-  --text-file=index.html --flavor=woff2 --layout-features='*' \
-  --output-file=assets/fonts/NotoSerifJP-SemiBold-subset.woff2
+for w in Regular Bold; do
+  python3 -m fontTools.subset <seed>/LINESeedJP/fonts/ttf/LINESeedJP-$w.ttf \
+    --text-file=index.html --unicodes=U+0020-007E,U+2014,U+00A9,U+3000-303F \
+    --flavor=woff2 --layout-features='*' --output-file=assets/fonts/LINESeedJP-$w-subset.woff2
+done
 ```
