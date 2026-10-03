@@ -23,11 +23,11 @@ python3 -m http.server 8080   # http://localhost:8080
 | LPの素材 | 元ファイル | 変換後 |
 |---|---|---|
 | `assets/plant-story.mp4` | `PlantMoment/Resources/OnboardingPlantStory.mp4` | H.264、幅720px、音声なし（`ffmpeg -an -vf scale=720:-2 -crf 26 -movflags +faststart`） |
-| `assets/day-{001,010,030,050,100}.webp` | `design/images/day-*.jpg` | WebP、幅1120px（`cwebp -q 80 -resize 1120 0`） |
+| `assets/day-{001,010,030,050,100}.webp` | `PlantMoment/Resources/OnboardingPlantStory.mp4` | ヒーローのPlant Storyと同じモンステラの各クリップから1フレーム（0.6・2.6・4.6・6.8・8.9秒）を書き出し、WebP、834×1112（`cwebp -q 80`） |
 | `assets/howto.mp4` | シミュレータで収録（下記） | H.264、幅720px、30fps、音声なし |
 | `assets/moment-t{1..6}.webp` | シミュレータのスクリーンショット（下記） | Photo Momentのプレビュー部分を切り抜き、WebP、幅720px |
 | `assets/iphone17pro-frame.webp` | `PlantMoment/design/images/store-iphone17pro-*.png`（pen.devのストア画像に使われているAppleのiPhone 17 Proフレーム、1350×2760） | 画面部分（1206×2622、角丸225）を透明にし、Dynamic Islandは`store-iphone17pro-plants-en-bezel-fixed.png`（明るい画面）から島の形（x489〜861・y112〜219、内側2px）だけを切り出してレンズまで残したもの。四隅は角丸190〜225の間を黒で塗り、元の画面の色が残らないようにしている。WebP・幅900px（`cwebp -q 92 -alpha_q 100 -exact -resize 900 0`） |
-| `assets/onboarding-backdrop.jpg` | `PlantMoment/PlantMoment/Assets.xcassets/OnboardingPlantList.imageset/screenshot.jpg` | ヒーローのiPhone画面（オンボーディングのPlant Storyページ）の背景。`ffmpeg -vf "scale=240:-1,gblur=sigma=10,crop=iw*0.85:ih*0.85" -q:v 4` |
+| `assets/onboarding-backdrop.jpg` | `PlantMoment/PlantMoment/Assets.xcassets/OnboardingPlantList.imageset/screenshot.jpg` | ヒーローのiPhone画面（Plant Storyの再生画面）の背景。`ffmpeg -vf "scale=240:-1,gblur=sigma=10,crop=iw*0.85:ih*0.85" -q:v 4` |
 | `assets/story-thumb-{001,010,030,050,100}.webp` | `PlantMoment/Assets.xcassets/OnboardingStoryVideoDay*.imageset/thumbnail.jpg` | WebP、幅180px（`cwebp -q 80 -resize 180 0`） |
 | `assets/shot-{care,detail,story,plants,register}.webp` | シミュレータのスクリーンショット（下記） | WebP、幅600px（`cwebp -q 82 -resize 600 0`） |
 | `assets/*-poster.jpg` | 各mp4の先頭フレーム | JPEG（`ffmpeg -frames:v 1`） |

@@ -22,7 +22,7 @@ h1, h2 { font-weight: 700; letter-spacing: .01em; line-height: 1.35; margin: 0; 
 h2 { font-size: clamp(28px, 3.6vw, 42px); }
 p { margin: 0; }
 .eyebrow { font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 14px; letter-spacing: .04em; }
-section { padding: clamp(88px, 12vw, 160px) 24px; }
+section { padding: clamp(72px, 9vw, 120px) 24px; }
 .section-head { max-width: 620px; margin: 0 auto 56px; text-align: center; }
 .section-head p:not(.eyebrow) { color: var(--muted); margin-top: 20px; }
 
@@ -35,6 +35,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14px; }
 .nav-links a { text-decoration: none; color: var(--muted); }
 .nav-links a:hover { color: var(--ink); }
+.nav-price { display: none; }
 .nav-cta { font-size: 13px; font-weight: 700; text-decoration: none; background: var(--ink); color: #fff; padding: 6px 14px; border-radius: 999px; }
 
 /* buttons */
@@ -44,7 +45,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 
 /* hero */
 .hero { max-width: var(--wrap); margin: 0 auto; min-height: 100svh; padding-top: 120px; padding-bottom: 80px; display: grid; grid-template-columns: 1fr minmax(0, 440px); gap: clamp(40px, 7vw, 110px); align-items: center; }
-.hero h1 { font-size: clamp(40px, 5.6vw, 68px); }
+.hero h1 { font-size: clamp(36px, 4.4vw, 58px); }
 .hero .lead { color: var(--muted); max-width: 30em; margin: 28px 0 40px; font-size: 17px; }
 .hero-media { margin: 0; width: 100%; max-width: 380px; justify-self: center; }
 /* オンボーディングのPlant Storyページ（402×874pt）を画面内に再現する */
@@ -52,11 +53,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .phone-ui > * { --pt: calc(100cqw / 402); }
 .phone-status { position: absolute; top: 0; left: 0; right: 0; height: calc(62 * var(--pt)); display: flex; align-items: center; justify-content: space-between; padding: calc(4 * var(--pt)) calc(34 * var(--pt)) 0 calc(48 * var(--pt)); font-size: calc(17 * var(--pt)); font-weight: 700; }
 .phone-status svg { width: calc(64 * var(--pt)); height: auto; }
-.phone-hero { position: absolute; top: calc(102 * var(--pt)); left: calc(46 * var(--pt)); width: calc(310 * var(--pt)); }
-.phone-copy { position: absolute; top: calc(603 * var(--pt)); left: 0; right: 0; padding: 0 calc(28 * var(--pt)); text-align: center; }
-.phone-title { margin: 0; font-size: calc(26 * var(--pt)); font-weight: 700; line-height: 1.25; }
-.phone-sub { margin: calc(9 * var(--pt)) 0 0; font-size: calc(14 * var(--pt)); line-height: 1.4; color: rgba(255, 255, 255, .72); }
-.phone-next { position: absolute; left: calc(26 * var(--pt)); right: calc(26 * var(--pt)); bottom: calc(54 * var(--pt)); height: calc(56 * var(--pt)); border-radius: 999px; background: #f7f7f7; color: #141414; display: flex; align-items: center; justify-content: center; font-size: calc(15 * var(--pt)); font-weight: 700; }
+.phone-hero { position: absolute; top: calc(150 * var(--pt)); left: calc(20 * var(--pt)); width: calc(362 * var(--pt)); }
 /* オンボーディングのPlant Story（幅310pt・4:5）と同じ比率で、文字の大きさと位置を幅に合わせて拡大する */
 .film { position: relative; aspect-ratio: 4 / 5; border-radius: calc(24 / 310 * 100%) / calc(24 / 387.5 * 100%); overflow: hidden; background: #000; color: #fff; container-type: inline-size; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -95,8 +92,8 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .steps button { all: unset; cursor: pointer; display: grid; grid-template-columns: 36px 1fr; column-gap: 16px; padding: 22px 0; border-top: 1px solid var(--line); width: 100%; }
 .steps li:last-child button { border-bottom: 1px solid var(--line); }
-.steps .n { grid-row: span 2; font-size: 26px; font-weight: 700; line-height: 1; color: #b6b3a8; transition: color .3s; }
-.steps .t { font-weight: 700; font-size: 18px; color: #9a988f; transition: color .3s; }
+.steps .n { grid-row: span 2; font-size: 26px; font-weight: 700; line-height: 1; color: #8f8c82; transition: color .3s; }
+.steps .t { font-weight: 700; font-size: 18px; color: #5f5d56; transition: color .3s; }
 .steps .d { color: var(--muted); font-size: 15px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .4s, opacity .4s, margin .4s; }
 .steps li.is-active .n { color: var(--green); }
 .steps li.is-active .t { color: var(--ink); }
@@ -131,6 +128,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .plain strong { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
 
 /* more */
+.hero-note { margin: 20px 0 0; font-size: 14px; color: var(--muted); }
 .hero-actions { display: flex; align-items: center; gap: 28px; }
 .hero-qr { display: flex; align-items: center; gap: 14px; }
 .hero-qr svg { width: 76px; height: 76px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); }
@@ -208,13 +206,16 @@ h3 { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.5; }
 
 @media (max-width: 860px) {
   .nav-links { display: none; }
-  .nav-cta { margin-left: auto; }
+  .nav-price { display: block; margin-left: auto; font-size: 14px; color: var(--muted); text-decoration: none; }
+  .nav-cta { margin-left: 0; }
   .hero { grid-template-columns: 1fr; padding-top: 96px; min-height: 0; gap: 48px; }
   .hero-media { max-width: 300px; margin: 0 auto; }
   .howto-body, .story-grid, .care-grid, .care-grid.plants-grid { grid-template-columns: 1fr; }
   .howto .screen, .story .screen { max-width: 300px; width: 100%; margin: 0 auto; }
   .story-grid .screen { order: 2; }
-  .steps .d { max-height: none; opacity: 1; margin-top: 6px; }
+  .howto-body .steps { order: -1; }
+  .howto .screen { max-width: 260px; }
+  .steps button { padding: 14px 0; }
   .templates { grid-template-columns: repeat(2, 1fr); }
   .days { grid-template-columns: repeat(5, 62vw); overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 24px; margin-left: -24px; margin-right: -24px; scrollbar-width: none; }
   .days li { scroll-snap-align: center; }
