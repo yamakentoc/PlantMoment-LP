@@ -73,14 +73,14 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .care-grid.plants-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 
 /* screens */
-.screen { border-radius: 34px; overflow: hidden; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 24px 50px -28px rgba(30, 32, 25, .35); }
-.screen img, .screen video { width: 100%; height: auto; }
-.screen-dark { background: #000; border-color: #000; }
+/* iPhone 17 Proの公式フレーム（1350×2760、画面1206×2622）。pen.devのストア画像と同じ素材を重ねる */
+.screen { position: relative; aspect-ratio: 1350 / 2760; filter: drop-shadow(0 24px 30px rgba(30, 32, 25, .28)); }
+.screen img, .screen video { position: absolute; left: 5.3333%; top: 2.5%; width: 89.3333%; height: 95%; object-fit: cover; border-radius: 18.657% / 8.581%; background: #000; }
+.screen::after { content: ""; position: absolute; inset: 0; background: url("assets/iphone17pro-frame.webp") center / 100% 100% no-repeat; pointer-events: none; }
 
 /* howto */
 .howto { background: var(--paper); }
 .howto-body { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 330px) 1fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
-.howto .screen { aspect-ratio: 1206 / 2622; background: #000; }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .steps button { all: unset; cursor: pointer; display: grid; grid-template-columns: 36px 1fr; column-gap: 16px; padding: 22px 0; border-top: 1px solid var(--line); width: 100%; }
 .steps li:last-child button { border-bottom: 1px solid var(--line); }
@@ -101,7 +101,7 @@ section { padding: clamp(88px, 12vw, 160px) 24px; }
 .story .eyebrow { color: #a9c3a5; }
 .story-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr minmax(0, 330px); gap: clamp(40px, 7vw, 96px); align-items: center; }
 .story-text > p:not(.eyebrow) { color: #b9b7af; margin-top: 24px; }
-.story .screen { border-color: #2c2d2a; box-shadow: none; }
+.story .screen { filter: none; }
 .facts { display: flex; gap: 48px; margin: 40px 0 0; }
 .facts dt { font-size: 13px; color: #8f8d86; }
 .facts dd { margin: 4px 0 0; font-size: 34px; font-weight: 700; line-height: 1.1; }
