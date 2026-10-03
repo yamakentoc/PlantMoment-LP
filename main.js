@@ -7,7 +7,7 @@
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  const revealTargets = document.querySelectorAll(".section-head, .hero-text, .hero-media, .howto-body, .templates li, .story-grid, .days, .care-grid, .more, .cta");
+  const revealTargets = document.querySelectorAll(".section-head, .hero-text, .hero-media, .howto-body, .templates li, .story-grid, .days, .care-grid, .more, .pricing, .cta");
   revealTargets.forEach((el) => el.classList.add("reveal"));
   const revealer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
