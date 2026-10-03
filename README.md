@@ -46,7 +46,7 @@ SIMCTL_CHILD_PLANTMOMENT_SCENARIO=landingPage \
 xcrun simctl io booted recordVideo --codec=h264 --force raw.mp4   # 操作後にCtrl+Cで終了
 ```
 
-- `howto.mp4`: お手入れタブでモンステラの水やりを「完了」→ 植物タブ → モンステラ → 「残す」→ PHOTO → シャッター → テンプレートを切り替えて「完了」まで、続けて操作して収録します。収録した動画は可変フレームレートなので、一度 `fps=30` で書き出してから、待ち時間を除いた5区間を `trim` と `concat` でつないでいます。
+- `howto.mp4`: 植物タブから、Momentタブ →「写真を撮る」→ モンステラ → シャッター → テンプレートを切り替えて「完了」まで、続けて操作して収録します。カメラには `PlantMoment/Assets.xcassets/OnboardingWelcomeMonstera.imageset/plant.jpg` を流しています。収録した動画は可変フレームレートなので、一度 `fps=30` で書き出してから、撮影直後の読み込みと「完了」後の処理待ちを除いた3区間を `trim` と `concat` でつないでいます（`-crf 26 -movflags +faststart`）。
 - `moment-t*.webp`: 編集画面で各テンプレートを選び、`xcrun simctl screenshot` で撮影します。iPhone 17（1206×2622）では `crop=1026:1282:90:345` でプレビュー部分を切り抜けます。
 - `shot-care.webp` はお手入れタブ、`shot-detail.webp` はモンステラの植物画面、`shot-story.webp` はMomentタブのPlant Story、`shot-plants.webp` は植物タブ、`shot-register.webp` は植物タブの「＋」から開く登録画面です。
 
