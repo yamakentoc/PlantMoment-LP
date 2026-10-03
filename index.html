@@ -20,6 +20,7 @@
     <a class="brand" href="#top"><img src="assets/app-icon.png" alt="" width="26" height="26"><span>Plant Moment</span></a>
     <nav class="nav-links" aria-label="ページ内">
       <a href="#howto">使い方</a>
+      <a href="#plants">植物</a>
       <a href="#photo">Photo Moment</a>
       <a href="#story">Plant Story</a>
       <a href="#care">お手入れ</a>
@@ -41,11 +42,39 @@
       </a>
     </div>
     <figure class="hero-media">
-      <video class="hero-video" src="assets/plant-story.mp4" poster="assets/plant-story-poster.jpg" muted loop playsinline autoplay preload="auto" aria-label="モンステラのPlant Story。2秒ずつ撮った動画が順に再生されます。"></video>
-      <figcaption>
-        <span class="day">DAY 1 — DAY 100</span>
-        <span class="name">Monstera deliciosa</span>
-      </figcaption>
+      <div class="film">
+        <video class="hero-video" src="assets/plant-story.mp4" poster="assets/plant-story-poster.jpg" muted loop playsinline autoplay preload="auto" aria-label="モンステラのPlant Story。2秒ずつ撮った動画が順に再生されます。"></video>
+        <div class="film-center" aria-hidden="true">
+          <span class="film-day" id="film-day">DAY 1</span>
+          <span class="film-note" id="film-note">モンステラをお迎えした！</span>
+        </div>
+        <div class="film-meta" aria-hidden="true">
+          <span id="film-date">2026/5/1</span>
+          <span class="film-name">Monstera deliciosa</span>
+        </div>
+      </div>
+      <ol class="film-thumbs" id="film-thumbs" aria-hidden="true">
+        <li data-day="1" data-date="2026/5/1" data-note="モンステラをお迎えした！" data-from="0" data-to="2">
+          <span class="thumb"><img src="assets/story-thumb-001.webp" alt="" width="180" height="240"><span class="bar"><i></i></span></span>
+          <span class="label">DAY 1</span>
+        </li>
+        <li data-day="10" data-date="2026/5/10" data-note="水やりタイム" data-from="2" data-to="3.875">
+          <span class="thumb"><img src="assets/story-thumb-010.webp" alt="" width="180" height="240"><span class="bar"><i></i></span></span>
+          <span class="label">DAY 10</span>
+        </li>
+        <li data-day="30" data-date="2026/5/30" data-note="新しい芽出てきてるかも？" data-from="3.875" data-to="6.041667">
+          <span class="thumb"><img src="assets/story-thumb-030.webp" alt="" width="180" height="240"><span class="bar"><i></i></span></span>
+          <span class="label">DAY 30</span>
+        </li>
+        <li data-day="50" data-date="2026/6/19" data-note="夕方の我が家とモンステラ" data-from="6.041667" data-to="8.166667">
+          <span class="thumb"><img src="assets/story-thumb-050.webp" alt="" width="180" height="240"><span class="bar"><i></i></span></span>
+          <span class="label">DAY 50</span>
+        </li>
+        <li data-day="100" data-date="2026/8/8" data-note="迎えてから100日経ったらしい" data-from="8.166667" data-to="10.041667">
+          <span class="thumb"><img src="assets/story-thumb-100.webp" alt="" width="180" height="240"><span class="bar"><i></i></span></span>
+          <span class="label">DAY 100</span>
+        </li>
+      </ol>
     </figure>
   </section>
 
@@ -124,6 +153,28 @@
     </ol>
   </section>
 
+  <section class="plants" id="plants">
+    <div class="care-grid plants-grid">
+      <div class="care-text">
+        <p class="eyebrow">植物の管理</p>
+        <h2>一株ずつ<br>名前と写真で</h2>
+        <p>一覧には、植物の写真と、迎えた日から数えたDAY、次のお手入れまでの日数が並びます。</p>
+        <ul class="plain">
+          <li><strong>名前だけで登録</strong>必要なのは植物名だけです。名前で検索するほか、写真から候補を出したり（Pro）、好きな名前をそのまま付けたりできます。</li>
+          <li><strong>写真、お迎え日、鉢のサイズ</strong>登録画面1枚で、タグや水やりの予定まで設定できます。どれもあとから変えられます。</li>
+          <li><strong>一覧からそのまま記録</strong>カードの「今日」「2日後」を押すと、そのお手入れを記録できます。押し間違えても3秒以内なら取り消せます。</li>
+          <li><strong>タグで絞り込み</strong>「リビング」「窓辺」などのタグを付けておけば、一覧をタグで絞り込めます。</li>
+          <li><strong>まとめて記録（Pro）</strong>複数の植物を選んで、お手入れを一度に記録できます。</li>
+          <li><strong>アーカイブ</strong>手放した植物は、記録を残したまま一覧と通知から外せます。あとで戻すこともできます。</li>
+        </ul>
+      </div>
+      <div class="care-shots">
+        <div class="screen"><img src="assets/shot-plants.webp" alt="植物タブ。写真、DAY、次のお手入れまでの日数が2列で並ぶ" width="600" height="1305" loading="lazy"></div>
+        <div class="screen"><img src="assets/shot-register.webp" alt="植物を登録する画面。植物名、学名、お迎え日、鉢のサイズ、タグ、水やり" width="600" height="1305" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="care" id="care">
     <div class="care-grid">
       <div class="care-shots">
@@ -146,8 +197,6 @@
   <section class="more">
     <h2>ほかにできること</h2>
     <dl class="more-list">
-      <div><dt>名前が分からなくても登録</dt><dd>写真から植物名の候補を出せます（Pro）。あとから名前を変えることもできます。</dd></div>
-      <div><dt>タグで整理</dt><dd>「リビング」「窓辺」など、置き場所ごとに一覧を絞り込めます。</dd></div>
       <div><dt>バックアップ</dt><dd>記録と写真・動画をまとめたバックアップを作っておけば、機種変更のときに戻せます。</dd></div>
       <div><dt>料金</dt><dd>2株までは無料。Proは買い切り2,480円、または月額500円で、植物の数に上限がなくなります。広告はありません。</dd></div>
     </dl>

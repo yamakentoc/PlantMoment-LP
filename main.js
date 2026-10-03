@@ -29,6 +29,31 @@
   }, { threshold: 0.4 });
   [hero, howto].forEach((v) => player.observe(v));
 
+  // ヒーロー動画の再生位置に合わせて、中央のDAYとひとこと、左下の日付、サムネイルの進み具合を切り替える。
+  const clips = [...document.querySelectorAll("#film-thumbs li")];
+  const day = document.getElementById("film-day");
+  const note = document.getElementById("film-note");
+  const date = document.getElementById("film-date");
+  let current = -1;
+  const syncFilm = () => {
+    const t = hero.currentTime;
+    const i = Math.max(0, clips.findLastIndex((li) => t >= +li.dataset.from));
+    const li = clips[i];
+    if (i !== current) {
+      current = i;
+      clips.forEach((c, k) => c.classList.toggle("is-active", k === i));
+      day.textContent = `DAY ${li.dataset.day}`;
+      note.textContent = li.dataset.note;
+      date.textContent = li.dataset.date;
+    }
+    const p = (t - li.dataset.from) / (li.dataset.to - li.dataset.from);
+    li.querySelector(".bar i").style.width = `${Math.min(Math.max(p, 0), 1) * 100}%`;
+  };
+  const tick = () => { syncFilm(); if (!hero.paused) requestAnimationFrame(tick); };
+  hero.addEventListener("play", () => requestAnimationFrame(tick));
+  hero.addEventListener("seeked", syncFilm);
+  syncFilm();
+
   // 操作動画の再生位置に合わせてステップを強調し、ステップのクリックでその位置へ移動する。
   const steps = [...document.querySelectorAll("#steps li")];
   const setActive = (t) => steps.forEach((li) => {

@@ -26,7 +26,8 @@ python3 -m http.server 8080   # http://localhost:8080
 | `assets/day-{001,010,030,050,100}.webp` | `design/images/day-*.jpg` | WebP、幅1120px（`cwebp -q 80 -resize 1120 0`） |
 | `assets/howto.mp4` | シミュレータで収録（下記） | H.264、幅720px、30fps、音声なし |
 | `assets/moment-t{1..6}.webp` | シミュレータのスクリーンショット（下記） | Photo Momentのプレビュー部分を切り抜き、WebP、幅720px |
-| `assets/shot-{care,detail,story}.webp` | シミュレータのスクリーンショット（下記） | WebP、幅600px（`cwebp -q 82 -resize 600 0`） |
+| `assets/story-thumb-{001,010,030,050,100}.webp` | `PlantMoment/Assets.xcassets/OnboardingStoryVideoDay*.imageset/thumbnail.jpg` | WebP、幅180px（`cwebp -q 80 -resize 180 0`） |
+| `assets/shot-{care,detail,story,plants,register}.webp` | シミュレータのスクリーンショット（下記） | WebP、幅600px（`cwebp -q 82 -resize 600 0`） |
 | `assets/*-poster.jpg` | 各mp4の先頭フレーム | JPEG（`ffmpeg -frames:v 1`） |
 | `assets/app-icon.png` | `design/images/AppIconDisplay.png` | PNG、256×256px（`sips -Z 256`） |
 | `assets/fonts/LINESeedJP-*-subset.woff2` | [line/seed](https://github.com/line/seed) のリリース `LINESeedJP/fonts/ttf/` | WOFF2（サブセット、下記）。ライセンスは `assets/fonts/LINESeedJP-OFL.txt` |
@@ -45,7 +46,7 @@ xcrun simctl io booted recordVideo --codec=h264 --force raw.mp4   # 操作後に
 
 - `howto.mp4`: お手入れタブでモンステラの水やりを「完了」→ 植物タブ → モンステラ → 「残す」→ PHOTO → シャッター → テンプレートを切り替えて「完了」まで、続けて操作して収録します。収録した動画は可変フレームレートなので、一度 `fps=30` で書き出してから、待ち時間を除いた5区間を `trim` と `concat` でつないでいます。
 - `moment-t*.webp`: 編集画面で各テンプレートを選び、`xcrun simctl screenshot` で撮影します。iPhone 17（1206×2622）では `crop=1026:1282:90:345` でプレビュー部分を切り抜けます。
-- `shot-care.webp` はお手入れタブ、`shot-detail.webp` はモンステラの植物画面、`shot-story.webp` はMomentタブのPlant Storyです。
+- `shot-care.webp` はお手入れタブ、`shot-detail.webp` はモンステラの植物画面、`shot-story.webp` はMomentタブのPlant Story、`shot-plants.webp` は植物タブ、`shot-register.webp` は植物タブの「＋」から開く登録画面です。
 
 ### フォント
 
